@@ -1,25 +1,36 @@
 <template>
   <div class="container">
     <h2>Eliminar</h2>
-    <form class="form" action="">
-      <p type="Cédula:"><input type="text" /></p>
-      <div class="boton">
-        <button>Eliminar</button>
-      </div>
-    </form>
+
+    <p type="Cedula:"><input v-model="cedula" type="text" /></p>
+    <div class="boton">
+      <button @click="eliminar" >Eliminar</button>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { eliminarFachada } from "../clients/clienteEstudiante.js";
+export default {
+  data() {
+    return {
+      cedula: null,
+    };
+  },
+  methods: {
+    async eliminar() {
+      console.log(this.cedula);
+      const data = await eliminarFachada(this.cedula);
+      console.log(data);
+    },
+  },
+};
 </script>
 
 <style>
-body{
+body {
   background: #a35648;
-
 }
-
 .container {
   display: flex;
   flex-direction: column;
@@ -35,7 +46,7 @@ p:before {
   margin-top: 30px;
   display: grid;
   grid-template-columns: 190px;
-  
+
   padding: 30px;
   border: solid 2px black;
   border-radius: 20px;
@@ -45,7 +56,6 @@ p:before {
   justify-content: center;
   display: flex;
   flex-direction: row;
-  
 }
 
 button {

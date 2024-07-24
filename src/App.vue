@@ -1,19 +1,18 @@
 <template>
   
-  <EstudianteG/>
+  <EstudianteD/>
 </template>
 
 <script>
-import EstudianteG from './components/EstudianteG.vue'
+import EstudianteD from './pages/EstudianteD.vue'
 
 export default {
   name: 'App',
   components: {
-    EstudianteG
+    EstudianteD
   }
 }
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
