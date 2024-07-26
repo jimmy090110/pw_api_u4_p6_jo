@@ -5,7 +5,7 @@
     <label for="nombre">Nombre:</label>
     <input v-model="nombre" type="text" id="nombre" />
 
-    <label for="apellido">Apellido:</label>s
+    <label for="apellido">Apellido:</label>
     <input v-model="apellido" type="text" id="apellido" />
 
     <label for="cedula">Cedula:</label>
@@ -47,7 +47,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 body {
   background: #548266;
 }

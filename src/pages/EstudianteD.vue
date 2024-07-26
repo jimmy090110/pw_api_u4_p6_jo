@@ -34,6 +34,7 @@ export default {
       const data = await obtenerPorCedulaAxiosFachada(this.cedula);
       this.nombre=data.nombre
       this.apellido=data.apellido
+      this.fecha=data.fechaNacimiento
 
       console.log(data);
       console.log(data.nombre);
@@ -51,10 +52,19 @@ export default {
       console.log(data);
     },
   },
+  created(){
+    console.log(this.$route)
+    if(this.$route.params.cedula !== 'vacio' ){
+      this.cedula=this.$route.params.cedula;
+      this.consultar();
+      
+    }
+   
+  }
 };
-</script>
+</script >
 
-<style>
+<style >
 body {
   background: #7da7a3;
 }
